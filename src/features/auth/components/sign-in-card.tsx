@@ -23,7 +23,7 @@ export default function SignInCard({setState}: Readonly<SignInCardProps>) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleProviderSignIn = (value: "github" | "google") => {
+    const onProviderSignIn = (value: "github" | "google") => {
         signIn(value)
     }
 
@@ -66,6 +66,7 @@ export default function SignInCard({setState}: Readonly<SignInCardProps>) {
                     <Button
                         disabled={false}
                         onClick={() => {
+                            onProviderSignIn("google")
                         }}
                         variant="outline"
                         size="lg"
@@ -77,7 +78,7 @@ export default function SignInCard({setState}: Readonly<SignInCardProps>) {
                     <Button
                         disabled={false}
                         onClick={() => {
-                            handleProviderSignIn("github")
+                            onProviderSignIn("github")
                         }}
                         variant="outline"
                         size="lg"
